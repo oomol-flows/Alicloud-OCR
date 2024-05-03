@@ -1,0 +1,20 @@
+nodes:
+  - task: ../../blocks/typescript_lib_5b6100/block.oo.yaml
+    node_id: 6100579f-ec5f-40c0-9e94-90621c87b14f
+    inputs_from:
+      - handle: localfile
+        cache:
+          initial_value: ""
+      - handle: localfile
+        cache:
+          initial_value: ""
+      - handle: bucket
+        cache:
+          initial_value: ""
+      - handle: accessKeyId
+        cache:
+          initial_value: ""
+      - handle: accessKeySecret
+        cache:
+          initial_value: ""
+    title: Upload to OSS
