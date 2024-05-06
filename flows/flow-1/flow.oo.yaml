@@ -1,20 +1,27 @@
 nodes:
-  - task: ../../blocks/typescript_lib_5b6100/block.oo.yaml
-    node_id: 6100579f-ec5f-40c0-9e94-90621c87b14f
+  - task: alicloud::upload_to_oss
+    node_id: f9fdef42-92ab-4548-bf48-91a2c59f38ca
     inputs_from:
-      - handle: localfile
+      - handle: region
         cache:
-          initial_value: ""
-      - handle: localfile
-        cache:
-          initial_value: ""
-      - handle: bucket
-        cache:
-          initial_value: ""
+          initial_value: oss-cn-hangzhou
       - handle: accessKeyId
-        cache:
-          initial_value: ""
       - handle: accessKeySecret
+      - handle: localfile
+  - task: alicloud::ocr
+    node_id: ea1d2ca3-3a82-4bf8-afcb-31d65354a57b
+    inputs_from:
+      - handle: type
         cache:
-          initial_value: ""
-    title: Upload to OSS
+          initial_value: General
+      - handle: url
+        from_node:
+          - node_id: f9fdef42-92ab-4548-bf48-91a2c59f38ca
+            output_handle: url
+  - task: preview::markdown_preview
+    node_id: 716e9c16-ceb4-4d97-a1ea-7b5b5affe777
+    inputs_from:
+      - handle: text
+        from_node:
+          - node_id: ea1d2ca3-3a82-4bf8-afcb-31d65354a57b
+            output_handle: content
