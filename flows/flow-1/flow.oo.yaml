@@ -9,9 +9,9 @@ nodes:
       - handle: accessKeySecret
         value: AliCloud,aliyun,AccessKey_Secret
       - handle: localfile
-        value: ""
+        value: "/oomol-storage/截屏2024-08-01 10.38.58.png"
       - handle: bucket
-        value: ""
+        value: "oomol-flows"
     title: Upload
   - task: alicloud::ocr
     node_id: ea1d2ca3-3a82-4bf8-afcb-31d65354a57b
