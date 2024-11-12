@@ -1,0 +1,4 @@
+icon: https://raw.githubusercontent.com/oomol-flows/Alicloud-OCR/main/icon.png
+scripts:
+  bootstrap: |
+    pnpm install --force && pip install -r requirements.txt

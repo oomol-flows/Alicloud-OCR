@@ -1,4 +1,0 @@
-container:
-  scripts:
-    bootstrap: pnpm i
-icon: ./icon.png
